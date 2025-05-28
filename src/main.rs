@@ -1,16 +1,19 @@
 fn main() {
-    // Class 197
-    let musical_instrument = [
+      let musical_instrument = [
         String::from("Guitar"),
         String::from("Piano"),
-        String::from("Drums"),
+        String::from("Bass"),
     ];
 
-    let drums: Option<&String> = musical_instrument.get(2);
-    println!("Drums: {:?}", drums);
+    let bass: Option<&String> = musical_instrument.get(2); 
+    println!("Bass: {:?}", bass);
+    let valid_instrument = bass.unwrap(); // Class 198
+    println!("{}", valid_instrument);
 
     let invalid_instrument: Option<&String> = musical_instrument.get(3);
     println!("Invalid Instrument: {:?}", invalid_instrument);
+    invalid_instrument.expect("This instrument does not exist in the list!"); // Class 198
+
 }
 /*
 // Class 196
