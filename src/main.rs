@@ -1,7 +1,28 @@
-use std::os::windows::io::InvalidHandleError;
+//Class 200
+fn is_item_in_stock(item_is_in_system: bool,item_is_in_stock: bool) -> Option<bool> {
+    if item_is_in_system && item_is_in_stock {
+        Option::Some(true)
+    } else if item_is_in_system {
+        Option::Some(false)
+    } else {
+        Option::None
+    } 
+}
+        
+fn main() { //Class 200
+   
+    let availability = is_item_in_stock(true, true);
 
-fn main() {
-    //Class 199
+    match availability {
+        Option::Some(true) => println!("Item is abailable!"),
+        Option::Some(false) => println!("Item is not available!"),
+        Option::None => println!("Item is not in the system!"),
+    }
+
+}
+
+/*
+ //Class 199
     let musical_instrument = [
         String::from("Guitar"),
         String::from("Piano"),
@@ -20,8 +41,7 @@ fn play(instrument_option: Option<&String>) {
         Option::Some(instrument) => println!("Playing the {}!", instrument),
         Option::None => println!("Singing with my voice!"),
     }
-}
-
+*/
 /*
 let musical_instrument = [
         String::from("Guitar"),
