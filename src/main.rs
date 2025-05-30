@@ -1,4 +1,13 @@
-//Class 200
+        
+fn main() { //Class 201
+   let present_value = Some(10);
+   let missing_value: Option<i32> = None; // poderia ser qualquer tipo
+
+   println!("{:?}", present_value.unwrap_or(0)); // Prints 10
+   println!("{:?}", missing_value.unwrap_or(0)); // Prints 0
+
+}
+/*
 fn is_item_in_stock(item_is_in_system: bool,item_is_in_stock: bool) -> Option<bool> {
     if item_is_in_system && item_is_in_stock {
         Option::Some(true)
@@ -19,8 +28,7 @@ fn main() { //Class 200
         Option::None => println!("Item is not in the system!"),
     }
 
-}
-
+} */
 /*
  //Class 199
     let musical_instrument = [
