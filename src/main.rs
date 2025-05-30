@@ -1,3 +1,11 @@
+fn main() { 
+    let ok: Result<i32, &str> = Ok(100); // Class 204
+    println!("ok: {:?}", ok);
+    let disaster: Result<i32, &str> = Err("Something went wrong!"); // Class 204
+    println!("disaster: {:?}", disaster);
+  
+}
+/*
 #[derive(Debug, Copy, Clone)] // Class 203
 
 enum MyOption {
@@ -27,6 +35,7 @@ fn main() {
     let none_option: MyOption = MyOption::None; 
     println!("{}", none_option.unwrap_or(13));
 }
+*/
 /*
 { //Class 201
    let present_value = Some(10);
