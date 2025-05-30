@@ -1,12 +1,42 @@
-        
-fn main() { //Class 201
+#[derive(Debug, Copy, Clone)] // Class 203
+
+enum MyOption {
+    Some(i32),
+    None,
+}
+impl MyOption {
+    fn unwrap(self) -> i32 {// Class 203
+        match self {
+            MyOption::Some(value) => value,
+            MyOption::None => panic!("Uh oh"),
+        }
+    }
+
+    fn unwrap_or(self, fallback_value: i32) -> i32 { // Class 203
+        match self {
+            MyOption::Some(value) => value,
+            MyOption::None => fallback_value,
+        }
+    }
+}
+
+fn main() { 
+    let some_option: MyOption = MyOption::Some(100); 
+    println!("{}", some_option.unwrap_or(13)); // Responde melhor que o unwrap, pois não causa panic se for None
+
+    let none_option: MyOption = MyOption::None; 
+    println!("{}", none_option.unwrap_or(13));
+}
+/*
+{ //Class 201
    let present_value = Some(10);
    let missing_value: Option<i32> = None; // poderia ser qualquer tipo
 
    println!("{:?}", present_value.unwrap_or(0)); // Prints 10
    println!("{:?}", missing_value.unwrap_or(0)); // Prints 0
-
 }
+*/
+
 /*
 fn is_item_in_stock(item_is_in_system: bool,item_is_in_stock: bool) -> Option<bool> {
     if item_is_in_system && item_is_in_stock {
