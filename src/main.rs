@@ -1,10 +1,19 @@
-fn main() { 
+fn main() { // Class 205 
+let text = "50";
+let text_as_number = text.parse::<i32>();
+println!("text_as_number: {:?}", text_as_number);  
+
+let text = "Alabama";
+let text_as_number = text.parse::<i32>();
+println!("text_as_number: {:?}", text_as_number); // Class 205
+  
+}
+/*
     let ok: Result<i32, &str> = Ok(100); // Class 204
     println!("ok: {:?}", ok);
     let disaster: Result<i32, &str> = Err("Something went wrong!"); // Class 204
     println!("disaster: {:?}", disaster);
-  
-}
+*/
 /*
 #[derive(Debug, Copy, Clone)] // Class 203
 
