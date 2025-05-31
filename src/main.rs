@@ -1,3 +1,22 @@
+fn operation(great_sucess: bool) -> Result<&'static str, &'static str> { // Class 208
+    if great_sucess {
+        Ok("Operation was successful!")
+    } else {
+        Err("Operation failed!")
+    }
+} 
+fn main() {  // Class 207
+   let my_result = operation(true);
+   let content = match my_result {
+        Ok(message) => message,
+        Err(error) => error,
+    };
+
+    println!("{}", my_result.unwrap());
+    
+   }
+   
+/*
 fn divide(numerator: f64, denominator: f64) -> Result<f64, String> { // Class 206
     if denominator == 0.0 {
         Err(String::from("Cannot divide by zero!".to_string()))
@@ -13,9 +32,8 @@ fn main() {  // Class 207
  // println!("{}", result.is_ok()); // This will return false if the result is an error.
     println!("{}", result.is_err()); // This will return true if the result is an error.
     
-}
-
-
+} 
+*/
 /*
 // Class 205
 let text = "50";
