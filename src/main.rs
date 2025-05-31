@@ -1,4 +1,19 @@
-fn main() { // Class 205 
+fn divide(numerator: f64, denominator: f64) -> Result<f64, String> { // Class 206
+    if denominator == 0.0 {
+        Err(String::from("Cannot divide by zero!".to_string()))
+    } else {
+        Ok(numerator / denominator)
+    }
+}
+fn main() {  // Class 206
+    let result = divide(10.0, 0.0);
+    match result {
+        Ok(calculation) => println!("Result: {}", calculation),
+        Err(message) => println!("Error: {}", message),
+    }
+}
+/*
+// Class 205 
 let text = "50";
 let text_as_number = text.parse::<i32>();
 println!("text_as_number: {:?}", text_as_number);  
@@ -7,7 +22,7 @@ let text = "Alabama";
 let text_as_number = text.parse::<i32>();
 println!("text_as_number: {:?}", text_as_number); // Class 205
   
-}
+*/
 /*
     let ok: Result<i32, &str> = Ok(100); // Class 204
     println!("ok: {:?}", ok);
