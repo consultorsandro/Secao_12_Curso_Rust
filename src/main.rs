@@ -5,15 +5,19 @@ fn divide(numerator: f64, denominator: f64) -> Result<f64, String> { // Class 20
         Ok(numerator / denominator)
     }
 }
-fn main() {  // Class 206
+fn main() {  // Class 207
     let result = divide(10.0, 0.0);
-    match result {
-        Ok(calculation) => println!("Result: {}", calculation),
-        Err(message) => println!("Error: {}", message),
-    }
+ // println!("{}", result.unwrap()); // This will panic if the result is an error. Ok from divide function.
+ // println!("{}", result.unwrap_or(0.0)); // This will return 0.0 if the result is an error.
+ // println!("{}", result.expect("Unable to parse calculation!")); 
+ // println!("{}", result.is_ok()); // This will return false if the result is an error.
+    println!("{}", result.is_err()); // This will return true if the result is an error.
+    
 }
+
+
 /*
-// Class 205 
+// Class 205
 let text = "50";
 let text_as_number = text.parse::<i32>();
 println!("text_as_number: {:?}", text_as_number);  
