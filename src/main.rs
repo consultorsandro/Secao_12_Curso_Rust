@@ -1,12 +1,64 @@
+#[derive(Debug)]
 
-fn main() {  // Class 209
+struct Food { // Class 211 Project
+    name: String,
+}
+#[derive(Debug)]
+struct Restaurant {
+    reservation: u32,
+    has_mice_infestation: bool,
+}
+impl Restaurant {
+    fn chef_special(&self) -> Option<Food> { // Class 211 Project
+        if self.has_mice_infestation {
+            return None;
+    }
+        if self.reservation > 12 {
+            Some(Food { name: String::from("Uni Sashimi"),
+            })
+        } else {
+            Some(Food { name: String::from("Strip Steak"),
+            })
+        }
+    }
+    fn deliver_burger(&self, adress: &str) -> Result<Food, String> { 
+        if self.has_mice_infestation {
+           return Err(String::from("Sorry, we have a mice infestation!"));
+}
+        if adress.is_empty() {
+            return Err(String::from("Please provide a valid address!"));
+        }
+        Ok(Food { name: String::from("Cheeseburger"),
+        })
+    }
+}
+
+fn main() {  // Class 211 Project
+    let marios = Restaurant {
+        reservation: 11,
+        has_mice_infestation: true,
+    };
+    println!("{:?}", marios.chef_special());
+    println!("{:?}", marios.deliver_burger("123 Main St"));
+
+    let angelos = Restaurant {
+        reservation: 13,
+        has_mice_infestation: false,
+    };
+    println!("{:?}", angelos.chef_special());
+    println!("{:?}", angelos.deliver_burger("123 Main St"));
+    println!("{:?}", angelos.deliver_burger(""));
+
+
+}
+/*
+ // Class 209
     let mut sauces = vec!["Maionaise", "Ketchup", "Ranch"];
 
     while let Some(sauce) = sauces.pop() { // Class 209
         println!("The next sauce is: {}", sauce);
     } 
-}
-   
+*/   
 /*
 fn divide(numerator: f64, denominator: f64) -> Result<f64, String> { // Class 206
     if denominator == 0.0 {
